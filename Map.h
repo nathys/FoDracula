@@ -5,6 +5,9 @@
 
 #include "Places.h"
 
+#define NO_EDGE -1
+#define NUM_TRANSPORT (ANY+1)
+
 typedef struct edge{
     LocationID  start;
     LocationID  end;
@@ -20,5 +23,9 @@ void disposeMap(Map g);
 void showMap(Map g); 
 int  numV(Map g);
 int  numE(Map g, TransportID t);
+
+// returns the distance of a direct edge of transport t FROM a TO b
+// or NO_EDGE if no such edge exists
+int  getDist(Map g, TransportID t, int a, int b);
 
 #endif
