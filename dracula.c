@@ -7,7 +7,7 @@
 #include "DracView.h"
 
 void decideDraculaMove(DracView gameState) {
-	LocationID nextMove = abbrevToID("CD");
+	LocationID nextMove = nameToID("CASTLE_DRACULA");
    LocationID trail[TRAIL_SIZE];
 	int *numLocations;
 	
@@ -20,7 +20,7 @@ void decideDraculaMove(DracView gameState) {
 	   int i, j;
 	   for (i = 0; i < TRAIL_SIZE; i++) {
 	      for (j = 0; j < *numLocations; j++) {
-	         if (trail[i] == moveList[j]) {
+	         if (trail[i] == moveList[j] || moveList[j] == nameToID("ST_JOSEPH_AND_ST_MARYS")) {
 	            moveList[j] = NOWHERE;
 	         }
 	      }
