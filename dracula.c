@@ -13,9 +13,7 @@ void decideDraculaMove(DracView gameState) {
    int *numLocations = &numLoc;
    LocationID *moveList = whereCanIgo(gameState, numLocations, TRUE, TRUE);
    if (numLoc != 0) {
-       // At the moment, just found out where I am, valid moves and pick a random one.
-	   //int dracLocID = whereIs(gameState, PLAYER_DRACULA);
-	   
+       // At the moment, just found out valid moves and pick a random one.
 	   giveMeTheTrail(gameState, PLAYER_DRACULA, trail);
 	   // Compare trail and possible moves, removing those that appear int the trail
 	   int i, j;
